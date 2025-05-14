@@ -1,0 +1,50 @@
+@import url('https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap');
+*{
+    font-family: "Jost", sans-serif;
+}
+
+.nav-link {
+    text-decoration: none;
+}
+.nav-item {
+    color: #000000;
+    font-weight: 400;
+}
+.heading {
+    margin-top: 7%;
+}
+.shop-learn-btn .btn-dark, .shop-learn-btn .btn-outline-dark {
+   border-radius: 1px;
+   width: 168px;
+   height: 50px;
+}
+.view-all .view-all-btn, .explore .explore-btn {
+    border-radius: 1px;
+    width: 168px;
+}
+.shop-learn-btn {
+    display: flex;
+}
+.sub-img {
+    margin-top: 4%;
+}
+.sub-img-left, .sub-img-center {
+    margin-right: 2%;
+}
+.text-start {
+    margin-top: 8%;
+}
+.new-arrival-top h3 {
+    color: #212121;
+    font-weight: 700;
+    margin-bottom: 5%;
+}
+.new-arrival {
+    margin-top: 5%;
+}
+.new-arrival-left, .byc-collection {
+    margin-left: 2%;
+}
+.byc-collection {
+    border: 1px;
+}

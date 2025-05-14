@@ -1,0 +1,18 @@
+import Logo from './BYC LOGO JPG FILE 1.png'
+import SubImageLeft from './Frame 180.png'
+import SubImageCenter from './Frame 179.png'
+import SubImageRight from './Frame 181.png'
+import NewImageLeft from './Frame 42.png'
+import NewImageCenter from './Frame 41 (1).png'
+import NewImageRight from './Frame 34.png'
+import CollectionImageRight from './Frame 166 (1).png'
+import CollectionButtomLeft from './Frame 167.png'
+import CollectionButtomRight from './Frame 168.png'
+import Underline from './Underline.png'
+import WomenPantsLeft from './Womenpants1.png'
+import WomenPantsCenter from './Womenpants2.png'
+import WomenPantsRight from './Womenpants3.png'
+import NavArrowLeft from './Navarrowleft.png'
+import NavArrowRight from './Navarrowright.png'
+
+export {Logo, SubImageLeft, SubImageCenter, SubImageRight, NewImageLeft, NewImageCenter, NewImageRight, CollectionImageRight, CollectionButtomLeft, CollectionButtomRight, Underline, WomenPantsLeft, WomenPantsCenter, WomenPantsRight, NavArrowLeft, NavArrowRight}

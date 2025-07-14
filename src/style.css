@@ -48,3 +48,166 @@
 .byc-collection {
     border: 1px;
 }
+.input-email {
+    color: '#FFFFFF'; 
+    opacity: '1';
+}
+@media print {
+  .byc-news-title,
+  .byc-news-title * {
+    display: none !important;
+    visibility: hidden;
+    height: 0;
+    overflow: hidden;
+  }
+}
+.divider {
+    border: none;
+    border-top: 1px solid #000;
+    text-align: center;
+}
+
+.star-rating {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px; /* space between stars and number */
+  position: relative;
+  font-size: 14px; /* or whatever suits your design */
+}
+
+.stars-outer {
+  position: relative;
+  color: #ddd;
+}
+
+.stars-inner {
+  position: absolute;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  color: #FBBF24;
+  white-space: nowrap;
+}
+
+.star {
+  margin-right: 2px;
+  pointer-events: none;
+}
+
+.rating-value {
+  font-weight: 500;
+  color: #333;
+  font-size: 14px;
+}
+
+.form {
+  width: 320px;
+  margin: 40px auto;
+  padding: 24px;
+}
+
+.form-container label {
+  display: block;
+  font-weight: 500;
+  margin-top: 12px;
+  margin-bottom: 6px;
+}
+
+.form input,
+.form textarea {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+.form textarea {
+  min-height: 80px;
+  resize: vertical;
+}
+
+.form button {
+  margin-top: 16px;
+  width: 100%;
+  padding: 12px;
+  background-color: #d9534f; /* red */
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.form button:hover {
+  background-color: #c9302c;
+}
+
+
+
+/* container styling */
+.all-products {
+  width: 100%;
+  max-width: 1200px;
+  margin: 4rem auto;
+  padding: 1rem;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  border-radius: 1rem;
+  background: #fff;
+}
+
+/* header with title and sort dropdown */
+.all-products-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.all-products-header h3 {
+  margin: 0;
+  font-size: 1.5rem;
+}
+
+.sort-container {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.sort-container select {
+  padding: 0.4rem 0.6rem;
+  font-size: 1rem;
+}
+
+/* divider */
+.divider {
+  margin: 1rem 0;
+  border: none;
+  height: 1px;
+  background: #ddd;
+}
+
+/* responsive grid for product cards */
+.product-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 1rem;
+}
+
+.product-card {
+  background: #fafafa;
+  border-radius: 0.5rem;
+  padding: 1rem;
+  box-shadow: rgba(0, 0, 0, 0.05) 0px 1px 2px;
+}
+
+.product-card h4 {
+  margin: 0 0 0.5rem;
+  font-size: 1.25rem;
+}
+
+.product-card p {
+  margin: 0.25rem 0;
+  font-size: 0.95rem;
+}

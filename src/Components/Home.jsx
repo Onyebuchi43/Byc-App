@@ -1,11 +1,14 @@
 import React from 'react';
 import '../style.css';
-import {Logo, SubImageLeft, SubImageCenter, SubImageRight, NewImageLeft, NewImageCenter, NewImageRight, CollectionImageRight, CollectionButtomLeft, CollectionButtomRight, Underline, WomenPantsLeft, WomenPantsCenter, WomenPantsRight, NavArrowLeft, NavArrowRight} from '../images';
+import {Logo, SubImageLeft, SubImageCenter, SubImageRight, NewImageLeft, NewImageCenter, NewImageRight, CollectionImageRight, CollectionButtomLeft, CollectionButtomRight, Underline, WomenPantsLeft, WomenPantsCenter, WomenPantsRight, NavArrowLeft, NavArrowRight, BlogImageLeft, BlogImageCenter, BlogImageRight, AuthorImage, ReadMoreArrow, Paypal, Visa, Mastercard, NewsLetterArrow, Mail, Phone, Facebook, Instagram, X, Youtube, HR} from '../images';
 import Selectbtn from './Selectbtn';
 import { useEffect } from 'react';
+import Footer from './Footer';
+import Nav from './Nav';
+import BycNews from './BycNews';
+import Blog from './Blog';
 
-
-const Navbar = () => {
+const Home = () => {
 
   useEffect(() => {
     // Gender selection buttons
@@ -51,54 +54,13 @@ const Navbar = () => {
 
   return (
     <>
-      <nav className="navbar navbar-expand-lg bg-none">
-    <div className="container-fluid">
+    <div><Nav /></div>
       
-      <ul className="navbar-nav me-auto mb-2 mb-lg-0">
-        <li className="nav-item">
-          <a className="nav-link" href="#">Shop Products</a>
-        </li>
-        <li className="nav-item">
-          <a className="nav-link" href="#">Blog</a>
-        </li>
-        <li className="nav-item">
-          <a className="nav-link" href="#">FAQ</a>
-        </li>
-      </ul>
-
-      
-      <img src={Logo} className="navbar-brand mx-auto" alt="#" >
-        
-      </img>
-
-      
-      <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
-        <li className="nav-item">
-          <a className="nav-link" href="#">About Us</a>
-        </li>
-        <li className="nav-item">
-          <a className="nav-link" href="#">Contact</a>
-        </li>
-        <li className="nav-item">
-          <a className="nav-link" href="#"><i className="bi bi-search"></i></a>
-        </li>
-        <li className="nav-item">
-          <a className="nav-link" href="#"><i className="bi bi-person"></i></a>
-        </li>
-        <li className="nav-item">
-          <a className="nav-link" href="#"><i className="bi bi-heart"></i></a>
-        </li>
-        <li className="nav-item">
-          <a className="nav-link" href="#"><i className="bi bi-cart"></i></a>
-        </li>
-      </ul>
-    </div>
-  </nav>
 
   <div className="d-flex flex-column align-items-center justify-content-center bg-none text-center heading">
     
     <p className="fs-4 mb-4" style={{fontWeight: '450', fontSize: '80px'}}>Your body deserves comfort</p>
-    <span className=" fw-bold mb-5" style={{fontSize: '60px', width: '690px'}}>Get the best for <span id="changingText" style={{fontSize: '60px', fontWeight: '700', minWidthwidth: '2px'}}>yourself</span></span>
+    <span className=" fw-bold mb-5" style={{fontSize: '60px', width: '690px'}}>Get the best for <span id="changingText" style={{fontSize: '55px', fontWeight: '700', minWidthwidth: '2px'}}>yourself</span></span>
     <div className="shop-learn-btn">
       <button type="button" className="btn btn-dark me-2" style={{width: '250px', height: '60px', fontWeight: '700'}}>Shop Now</button>
       <button type="button" className="btn btn-outline-dark learn-more-btn" style={{width: '250px', height: '60px', border: '3px solid #000001', fontWeight: '700', marginLeft: '20px'}}>Learn More</button>
@@ -194,15 +156,15 @@ const Navbar = () => {
   </div>
 
 
-  <div className="shop-category">
+  <div className="shop-category" >
     <div className="shop-category-body" style={{marginTop: '8%', textAlign: 'center'}}>
       <div className="shop-category-title">
         <h1 style={{paddingBottom: '40px'}}>Shop By Category</h1>
       </div>
       <div className="shop-category-gender" style={{marginBottom: '2%'}}>
-        <button className="gender-select-btn-1" style={{fontSize: '24px', padding: '10px 20px', border: 'none', cursor: 'pointer', backgroundColor: 'white', color: 'black'}} onClick={Selectbtn}>For Women</button>
-        <button className="gender-select-btn-2" style={{fontSize: '24px', padding: '10px 20px', border: 'none', cursor: 'pointer', backgroundColor: 'white', color: 'black'}} onClick={Selectbtn}>For Men</button>
-        <button className="gender-select-btn-3" style={{fontSize: '24px', padding: '10px 20px', border: 'none', cursor: 'pointer', backgroundColor: 'white', color: 'black'}} onClick={Selectbtn}>For Kids</button>
+        <button className="gender-select-btn-1" style={{fontSize: '24px', padding: '10px 20px', border: 'none', cursor: 'pointer', backgroundColor: 'white', color: 'black'}}>For Women</button>
+        <button className="gender-select-btn-2" style={{fontSize: '24px', padding: '10px 20px', border: 'none', cursor: 'pointer', backgroundColor: 'white', color: 'black'}}>For Men</button>
+        <button className="gender-select-btn-3" style={{fontSize: '24px', padding: '10px 20px', border: 'none', cursor: 'pointer', backgroundColor: 'white', color: 'black'}}>For Kids</button>
       </div>
       <div className="shop-category-selection">
         <button className="clothing-select-btn-1" style={{display: 'inlineBlock', padding: '10px 20px', margin: '5px', border: '1px solid #F5F5F5', textAlign: 'center', cursor: 'pointer', fontSize: '20px', backgroundColor: 'white', width: '100px', height: '50px'}}>T-shirt</button>
@@ -260,8 +222,15 @@ const Navbar = () => {
     </div>
     </div>
   </div>
+
+
+  <div><BycNews/></div>
+
+  
+      <div><Footer/></div>
+
   </>
   )
 }
 
-export default Navbar
+export default Home

@@ -4,6 +4,7 @@ import Nav from './Nav'
 import Footer from './Footer'
 import {BlogImageLeft, BlogImageCenter, BlogImageRight, AuthorImage, ReadMoreArrow} from '../images';
 import AuthorSection from './AuthorSection';
+import ReadMoreBtn from './ReadMoreBtn';
 
 const Blog = () => {
   return (
@@ -26,7 +27,7 @@ const Blog = () => {
                   consequat sunt nostrud ametAmet minim mollit non deserunt ullamco<br/>
                    est sit aliqua dolor do amet sint. Velit<br/> officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet..</p>
 
-                <button className='read-more-btn' style={{width: '140px', height: '50px', border: '2px slim #393939', fontWeight: '600', marginTop: '7%', backgroundColor: '#FFFFFF'}}>Read more <img style={{marginLeft: '5%'}} src={ReadMoreArrow} alt="" /></button>
+                <ReadMoreBtn/>
                 < AuthorSection />  
                 </div>
             </div>
@@ -43,7 +44,7 @@ const Blog = () => {
                   consequat sunt nostrud ametAmet minim mollit non deserunt ullamco<br/>
                    est sit aliqua dolor do amet sint. Velit<br/> officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet..</p>
 
-                <button className='read-more-btn' style={{width: '140px', height: '50px', border: '2px slim #393939', fontWeight: '600', marginTop: '7%', backgroundColor: '#FFFFFF'}}>Read more <img style={{marginLeft: '5%'}} src={ReadMoreArrow} alt="" /></button>
+                <ReadMoreBtn/>
                 < AuthorSection />  
                 </div>
                 <img style={{marginLeft: '3%', width: '40%', height: '450px'}} src={BlogImageLeft} alt="" />
@@ -64,7 +65,7 @@ const Blog = () => {
                   consequat sunt nostrud ametAmet minim mollit non deserunt ullamco<br/>
                    est sit aliqua dolor do amet sint. Velit<br/> officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet..</p>
 
-                <button className='read-more-btn' style={{width: '140px', height: '50px', border: '2px slim #393939', fontWeight: '600', marginTop: '7%', backgroundColor: '#FFFFFF'}}>Read more <img style={{marginLeft: '5%'}} src={ReadMoreArrow} alt="" /></button>
+                <ReadMoreBtn/>
                 < AuthorSection />  
                 </div>
             </div>
@@ -78,4 +79,3 @@ const Blog = () => {
 }
 
 export default Blog
-

@@ -4,13 +4,17 @@ import { BlogHero } from '../images'
 import {BlogImageLeft, BlogImageCenter, BlogImageRight, AuthorImage, ReadMoreArrow} from '../images';
 import Blog from './Blog';
 import { useNavigate } from "react-router-dom";
+import ReadMoreBtn from './ReadMoreBtn';
 
 
 
 const BycNews = ({hideTitle}) => {
-
-      const navigate = useNavigate();
-
+  
+    const navigate = useNavigate();
+  
+    const handleBlog = () => {
+    navigate('/blog');
+  };
 
   return (
     <>
@@ -45,9 +49,7 @@ const BycNews = ({hideTitle}) => {
              dolor do amet sint. Velit officia consequat duis enim<br/>
               velit mollit. Exercitation veniam consequat sunt nostrud<br/> amet.</p>
           </div>
-          
-          <button className='read-more-btn' style={{width: '140px', height: '50px', border: '2px slim #393939', fontWeight: '600', marginTop: '7%', backgroundColor: '#FFFFFF'}}>Read more <img style={{marginLeft: '5%'}} src={ReadMoreArrow} alt="" /></button>
-          
+          <ReadMoreBtn />          
         </div>
         </div>
 
@@ -73,7 +75,7 @@ const BycNews = ({hideTitle}) => {
              dolor do amet sint. Velit officia consequat duis enim<br/>
               velit mollit. Exercitation veniam consequat sunt nostrud<br/> amet.</p>
           </div>
-          <button className='read-more-btn' style={{width: '140px', height: '50px', border: '2px slim #393939', fontWeight: '600', marginTop: '7%', backgroundColor: '#FFFFFF'}}>Read more <img style={{marginLeft: '5%'}} src={ReadMoreArrow} alt="" /></button>
+          <ReadMoreBtn />
         </div>
         </div>
 
@@ -99,13 +101,13 @@ const BycNews = ({hideTitle}) => {
              dolor do amet sint. Velit officia consequat duis enim<br/>
               velit mollit. Exercitation veniam consequat sunt nostrud<br/> amet.</p>
           </div>
-          <button className='read-more-btn' style={{width: '140px', height: '50px', border: '2px slim #393939', fontWeight: '600', marginTop: '7%', backgroundColor: '#FFFFFF'}}>Read more <img style={{marginLeft: '5%'}} src={ReadMoreArrow} alt="" /></button>
+          <ReadMoreBtn />
         </div>
         </div>
       </div>
       {!hideTitle && (
         <div className="view-all text-center">
-      <button onClick={() => navigate("/Blog")} type="button" className="btn btn-outline-dark view-all-btn" style={{width: '230px', height: '50px', border: '2px solid #000001', fontWeight: '700', marginTop: '2%'}}>View All</button>
+      <button onClick={handleBlog} type="button" className="btn btn-outline-dark view-all-btn" style={{width: '230px', height: '50px', border: '2px solid #000001', fontWeight: '700', marginTop: '2%'}}>View All</button>
       </div>
       )}
      

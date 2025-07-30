@@ -10,7 +10,7 @@ const RecentlyViewed = () => {
         <div className="recently-viewed-body">
             <div className="recently-viewed-title" style={{display: 'flex', flexWrap: 'wrap', justifyContent: 'space-between'}}>
                 <h3 style={{ fontWeight: '700', fontSize: '20px'}}>Recently Viewed</h3>
-                <p>See all &gt;</p>
+                <p style={{cursor: 'pointer'}}>See all &gt;</p>
             </div>
 
             <hr className="divider" />

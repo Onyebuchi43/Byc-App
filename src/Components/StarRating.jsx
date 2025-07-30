@@ -1,31 +1,53 @@
 // src/components/StarRating.jsx
 import React from 'react';
 import { FaStar } from 'react-icons/fa';
-import '../style.css';
 
 const StarRating = ({ rating, outOf = 5, size = 24, color = '#FBBF24' }) => {
-  // compute percentage of filled stars
   const percent = (Math.max(0, Math.min(rating, outOf)) / outOf) * 100;
 
   return (
-    <div className="star-rating" style={{ fontSize: size }}>
-      {/* empty stars background */}
-      <div className="stars-outer">
-        {Array.from({ length: outOf }).map((_, i) => (
-          <FaStar key={i} className="star" color="#ddd" />
-        ))}
-      </div>
-      {/* filled stars overlay, clipped by width */}
+    <div
+      className="star-rating"
+      style={{
+        position: 'relative',
+        display: 'inline-block',
+        fontSize: size,
+        lineHeight: 1,
+      }}
+    >
+      {/* Empty stars */}
       <div
-        className="stars-inner"
-        style={{ width: `${percent}%`, color }}
+        className="stars-outer"
+        style={{ color: '#ddd', display: 'flex', position: 'relative' }}
       >
         {Array.from({ length: outOf }).map((_, i) => (
           <FaStar key={i} className="star" />
         ))}
       </div>
-      {/* numeric score */}
-      <span className="rating-value">{rating.toFixed(2)}</span>
+
+      {/* Filled stars */}
+      <div
+        className="stars-inner"
+        style={{
+          position: 'absolute',
+          top: 0,
+          left: 0,
+          whiteSpace: 'nowrap',
+          overflow: 'hidden',
+          width: `${percent}%`,
+          color,
+          display: 'flex',
+          pointerEvents: 'none',
+        }}
+      >
+        {Array.from({ length: outOf }).map((_, i) => (
+          <FaStar key={i} className="star" />
+        ))}
+      </div>
+
+      {/* Optional: numeric rating */}
+      {/* You can uncomment the next line if needed */}
+      {/* <span style={{ marginLeft: 8, fontSize: 14 }}>{rating.toFixed(2)}</span> */}
     </div>
   );
 };

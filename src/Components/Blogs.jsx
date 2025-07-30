@@ -6,9 +6,6 @@ import { BlogsImage } from '../images';
 import BycNews from './BycNews';
 import DynamicBreadcrumb from './DynamicBreadCrumb';
 
-
-
-
 const Blogs = () => {
   return (
     <>

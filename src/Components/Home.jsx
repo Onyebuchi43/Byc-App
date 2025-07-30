@@ -7,8 +7,15 @@ import Footer from './Footer';
 import Nav from './Nav';
 import BycNews from './BycNews';
 import Blog from './Blog';
+import { useNavigate } from 'react-router-dom';
 
 const Home = () => {
+
+  const navigate = useNavigate();
+
+  const handleAbout = () => {
+  navigate('/AboutUs');
+  };
 
   useEffect(() => {
     // Gender selection buttons
@@ -63,7 +70,7 @@ const Home = () => {
     <span className=" fw-bold mb-5" style={{fontSize: '60px', width: '690px'}}>Get the best for <span id="changingText" style={{fontSize: '55px', fontWeight: '700', minWidthwidth: '2px'}}>yourself</span></span>
     <div className="shop-learn-btn">
       <button type="button" className="btn btn-dark me-2" style={{width: '250px', height: '60px', fontWeight: '700'}}>Shop Now</button>
-      <button type="button" className="btn btn-outline-dark learn-more-btn" style={{width: '250px', height: '60px', border: '3px solid #000001', fontWeight: '700', marginLeft: '20px'}}>Learn More</button>
+      <button onClick={handleAbout} type="button" className="btn btn-outline-dark learn-more-btn" style={{width: '250px', height: '60px', border: '3px solid #000001', fontWeight: '700', marginLeft: '20px'}}>Learn More</button>
     </div>
     </div>
 

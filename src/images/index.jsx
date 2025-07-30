@@ -38,6 +38,9 @@ import Map from './Map.png'
 import AddressIcon from './AddressIcon.png'
 import PhoneCallIcon from './PhoneCallIcon.png'
 import EmailIcon from './EmailIcon.png'
+import Bycboxerswine from './Bycboxerswine.png'
+import Bycboxersblue from './Bycboxersblue.png'
+import SecuredPayImage from './SecuredPayImage.png'
+import Divider from './Divider.png'
 
-
-export {Logo, SubImageLeft, SubImageCenter, SubImageRight, NewImageLeft, NewImageCenter, NewImageRight, CollectionImageRight, CollectionButtomLeft, CollectionButtomRight, Underline, WomenPantsLeft, WomenPantsCenter, WomenPantsRight, NavArrowLeft, NavArrowRight, BlogImageLeft, BlogImageCenter, BlogImageRight, AuthorImage, ReadMoreArrow, Paypal, Visa, Mastercard, NewsLetterArrow, Mail, Phone, Facebook, X, Instagram, Youtube, HR, BlogsImage, Aboutus, AwardsMedal, BycMenBoxers, Map, AddressIcon, PhoneCallIcon, EmailIcon};
+export {Logo, SubImageLeft, SubImageCenter, SubImageRight, NewImageLeft, NewImageCenter, NewImageRight, CollectionImageRight, CollectionButtomLeft, CollectionButtomRight, Underline, WomenPantsLeft, WomenPantsCenter, WomenPantsRight, NavArrowLeft, NavArrowRight, BlogImageLeft, BlogImageCenter, BlogImageRight, AuthorImage, ReadMoreArrow, Paypal, Visa, Mastercard, NewsLetterArrow, Mail, Phone, Facebook, X, Instagram, Youtube, HR, BlogsImage, Aboutus, AwardsMedal, BycMenBoxers, Map, AddressIcon, PhoneCallIcon, EmailIcon, Bycboxersblue, Bycboxerswine, SecuredPayImage, Divider};

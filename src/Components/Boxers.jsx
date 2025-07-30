@@ -1,0 +1,306 @@
+import React, { useState, useEffect } from 'react';
+import '../style.css';
+import Nav from './Nav';
+import Footer from './Footer';
+import DynamicBreadcrumb from './DynamicBreadCrumb';
+import { Bycboxersblue, Bycboxerswine } from '../images';
+import StarRating from './StarRating';
+import { FaTh, FaBars } from 'react-icons/fa';
+import RecentlyViewed from './RecentlyViewed';
+import { useNavigate } from 'react-router-dom';
+import { AiOutlineHeart, AiFillHeart } from 'react-icons/ai';
+
+// Sample Product Data (with unique IDs)
+const products = [
+  {
+    id: 0,
+    title: 'CAMISOLE',
+    code: 'BYC-2598ABC',
+    description: 'Long Cotton Adjustable Strap Camisole in white. Perfect for layering or lounging.',
+    price: '₦1,900.00',
+    sold: 100,
+    image: Bycboxersblue,
+    rating: 4.1,
+  },
+  {
+    id: 1,
+    title: 'MEN BOXERS',
+    code: 'BYC-1166',
+    description: '100% Cotton Pack of 12 Comfortable Mens Boxers for everyday wear.',
+    price: '₦2,000.00',
+    sold: 98,
+    image: Bycboxerswine,
+    rating: 3.9,
+  },
+  {
+    id: 2,
+    title: 'SPORTS BRA',
+    code: 'BYC-SPBR',
+    description: 'Seamless high support sports bra. Breathable and durable design.',
+    price: '₦2,100.00',
+    sold: 96,
+    image: Bycboxersblue,
+    rating: 4.0,
+  },
+  {
+    id: 3,
+    title: 'SLEEVELESS TEE',
+    code: 'BYC-SLT10',
+    description: 'Lightweight sleeveless cotton tee for men. Perfect for casual wear.',
+    price: '₦2,200.00',
+    sold: 94,
+    image: Bycboxerswine,
+    rating: 4.2,
+  },
+  {
+    id: 4,
+    title: 'BOY’S BRIEFS',
+    code: 'BYC-BRB12',
+    description: 'Pack of 12 boy’s briefs made with soft breathable cotton fabric.',
+    price: '₦2,300.00',
+    sold: 92,
+    image: Bycboxersblue,
+    rating: 3.8,
+  },
+  {
+    id: 5,
+    title: 'BOY’S BRIEFS 2',
+    code: 'BYC-BRB13',
+    description: 'Colorful cotton boy’s briefs pack with extra comfort.',
+    price: '₦2,400.00',
+    sold: 89,
+    image: Bycboxerswine,
+    rating: 3.7,
+  },
+    {
+    id: 6,
+    title: 'BOY’S BRIEFS 2',
+    code: 'BYC-BRB13',
+    description: 'Colorful cotton boy’s briefs pack with extra comfort.',
+    price: '₦2,400.00',
+    sold: 89,
+    image: Bycboxersblue,
+    rating: 3.7,
+  },
+    {
+    id: 7,
+    title: 'BOY’S BRIEFS 2',
+    code: 'BYC-BRB13',
+    description: 'Colorful cotton boy’s briefs pack with extra comfort.',
+    price: '₦2,400.00',
+    sold: 89,
+    image: Bycboxerswine,
+    rating: 3.7,
+  },
+    {
+    id: 8,
+    title: 'BOY’S BRIEFS 2',
+    code: 'BYC-BRB13',
+    description: 'Colorful cotton boy’s briefs pack with extra comfort.',
+    price: '₦2,400.00',
+    sold: 89,
+    image: Bycboxersblue,
+    rating: 3.7,
+  },
+    {
+    id: 9,
+    title: 'BOY’S BRIEFS 2',
+    code: 'BYC-BRB13',
+    description: 'Colorful cotton boy’s briefs pack with extra comfort.',
+    price: '₦2,400.00',
+    sold: 89,
+    image: Bycboxerswine,
+    rating: 3.7,
+  },
+  // Add more products as needed
+];
+
+const Boxers = () => {
+
+    const [wishlist, setWishlist] = useState(() => {
+  const saved = localStorage.getItem('wishlist');
+  return saved ? JSON.parse(saved) : [];
+});
+
+const toggleWishlist = (product) => {
+  const isInWishlist = wishlist.some(item => item.id === product.id);
+  let updatedWishlist;
+
+  if (isInWishlist) {
+    updatedWishlist = wishlist.filter(item => item.id !== product.id);
+  } else {
+    updatedWishlist = [...wishlist, product];
+  }
+
+  setWishlist(updatedWishlist);
+  localStorage.setItem('wishlist', JSON.stringify(updatedWishlist));
+};
+
+  const navigate = useNavigate();
+
+  const [sortBy, setSortBy] = useState('sold');
+  const [isGridView, setIsGridView] = useState(true);
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
+  const sortedProducts = [...products].sort((a, b) => {
+    if (sortBy === 'price') {
+      return parseFloat(b.price.replace(/[₦,]/g, '')) - parseFloat(a.price.replace(/[₦,]/g, ''));
+    }
+    return b.sold - a.sold;
+  });
+
+  const cardStyle = {
+    width: isGridView ? '19%' : '100%',
+    display: 'flex',
+    flexDirection: isGridView ? 'column' : 'row',
+    alignItems: isGridView ? 'initial' : 'center',
+    minWidth: '180px',
+    borderRadius: '10px',
+    overflow: 'hidden',
+    gap: isGridView ? '0' : '1rem',
+    position: 'relative',
+    transition: '0.3s',
+  };
+
+  const imageStyle = {
+    width: isGridView ? '100%' : '150px',
+    borderTopLeftRadius: '10px',
+    borderTopRightRadius: '10px',
+  };
+
+  const containerStyle = {
+    marginTop: '8%',
+    borderRadius: '20px',
+    width: '100%',
+    paddingBottom: '2rem',
+  };
+
+  const rowStyle = {
+    display: 'flex',
+    flexWrap: 'wrap',
+    gap: '1rem',
+    justifyContent: isGridView ? 'center' : 'flex-start',
+    marginBottom: '60px',
+  };
+
+  return (
+    <>
+      <Nav />
+      <DynamicBreadcrumb />
+
+      <div className="all-products container" style={containerStyle}>
+        <div className="all-products-body">
+          <div className="all-products-title" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+            <h3 style={{ fontWeight: '700', fontSize: '20px' }}>Boxers</h3>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
+              <label htmlFor="sort" style={{ fontSize: '12px', fontWeight: 'bold' }}>SORT BY</label>
+              <select id="sort" onChange={(e) => setSortBy(e.target.value)} value={sortBy}>
+                <option value="sold">Most Sold</option>
+                <option value="price">Price</option>
+              </select>
+              <button onClick={() => setIsGridView(false)} style={{ padding: '5px', background: !isGridView ? '#eee' : 'white' }}>
+                <FaBars />
+              </button>
+              <button onClick={() => setIsGridView(true)} style={{ padding: '5px', background: isGridView ? '#eee' : 'white' }}>
+                <FaTh />
+              </button>
+            </div>
+          </div>
+
+          <hr className="divider" />
+
+          <div className="products-cards">
+            <div className="product-cards-body" style={rowStyle}>
+              {sortedProducts.map((product) => (
+                <div
+                key={product.id}
+                className="product-card"
+                style={cardStyle}
+                onMouseEnter={(e) => {
+                  e.currentTarget.classList.add('card-hovered');
+                  e.currentTarget.querySelector('.hover-buttons').style.display = 'flex';
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.classList.remove('card-hovered');
+                  e.currentTarget.querySelector('.hover-buttons').style.display = 'none';
+                  }}
+                  >
+
+                  <img src={product.image} alt={product.title} style={imageStyle} />
+                  <div style={{ padding: '0.5rem', textAlign: 'left', flex: 1 }}>
+                    <h4>{product.title}</h4>
+                    <p>{product.code}</p>
+                    <p style={{ fontSize: '14px', color: '#787885' }}>{product.description}</p>
+                    <div className="product-price">
+                      <h4>{product.price}</h4>
+                    </div>
+                    <div className="rating">
+                      <StarRating rating={product.rating} color="#FBBF24" />
+                    </div>
+                  </div>
+
+                  {/* Hover Buttons */}
+                  <div
+                    className="hover-buttons"
+                    style={{
+                      display: 'none',
+                      position: 'absolute',
+                      bottom: '10px',
+                      left: '10px',
+                      right: '10px',
+                      justifyContent: 'space-between',
+                      gap: '0.5rem',
+                    }}
+                  >
+                    <button 
+                      onClick={() => toggleWishlist(product)}
+                      style={{
+                        flex: 1,
+                        backgroundColor: '#fff',
+                        border: '1px solid #d33',
+                        color: wishlist.some(item => item.id === product.id) ? 'red' : '#d33',
+                        padding: '0.3rem',
+                        borderRadius: '5px',
+                        fontSize: '13px',
+                        cursor: 'pointer',
+                      }}
+                      aria-label="Toggle Wishlist"
+                    >
+                      {wishlist.some(item => item.id === product.id) ? (
+                        <AiFillHeart />
+                      ) : (
+                      <AiOutlineHeart />
+                      )} Wishlist
+                    </button>
+                    <button
+                      onClick={() => navigate('/checkout', { state: { product } })}
+                      style={{
+                        flex: 1,
+                        backgroundColor: '#d33',
+                        color: '#fff',
+                        padding: '0.3rem',
+                        border: 'none',
+                        borderRadius: '5px',
+                        fontSize: '13px',
+                        cursor: 'pointer',
+                      }}
+                    >
+                      <i className="bi bi-cart"></i> Buy Now
+                    </button>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <Footer />
+    </>
+  );
+};
+
+export default Boxers;

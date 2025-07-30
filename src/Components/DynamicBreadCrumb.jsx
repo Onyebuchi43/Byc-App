@@ -9,7 +9,7 @@ const DynamicBreadcrumb = () => {
   const LABELS = {
     'AboutUs': 'About Us',
     'ContactUs': 'Contact Us',
-    'AllProducts': 'All Products'
+    'AllProducts': 'All Products',
   }
 
   // 1. build the full crumbs

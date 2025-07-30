@@ -9,6 +9,11 @@ import AboutUs from './Components/AboutUs';
 import ContactUs from './Components/ContactUs';
 import AllProducts from './Components/AllProducts';
 import Login from './Components/Login';
+import Checkout from './Components/Checkout';
+import Cart from './Components/Cart';
+import Wishlist from './Components/Wishlist';
+import Boxers from './Components/Boxers';
+import CartPage from './Components/CartPage';
 
 const App = () => {
   return (
@@ -28,6 +33,11 @@ const App = () => {
         <Route path="/ContactUs" element={<ContactUs />} />
         <Route path="/AllProducts" element={<AllProducts />} />
         <Route path="/Login" element={<Login />} />
+        <Route path="/Checkout" element={<Checkout />} />
+        <Route path="/Cart/:id" element={<Cart />} />
+        <Route path="/Wishlist" element={<Wishlist />} />
+        <Route path="/Boxers" element={<Boxers />} />
+        <Route path="/CartPage" element={<CartPage />} />
       </Routes>
     </Router>
   );

@@ -5,10 +5,20 @@ import '../style.css';
 import RecentlyViewed from './RecentlyViewed';
 import { AiFillHeart, AiOutlineHeart } from 'react-icons/ai';
 import { FaTrashAlt } from 'react-icons/fa';
-import {Divider} from '../images';
+import { Divider } from '../images';
 
 const CartPage = () => {
-  const [cartItems, setCartItems] = useState(() => JSON.parse(localStorage.getItem('cart')) || []);
+  const [cartItems, setCartItems] = useState(() => {
+    const storedCart = JSON.parse(localStorage.getItem('cart')) || [];
+    return storedCart.map(item => ({
+      ...item,
+      quantity: item.quantity || 1,
+      price: typeof item.price === 'string'
+        ? parseFloat(item.price.replace(/[₦,]/g, '')) || 0
+        : item.price || 0
+    }));
+  });
+
   const [wishlist, setWishlist] = useState(() => JSON.parse(localStorage.getItem('wishlist')) || []);
 
   const updateCartInStorage = (items) => {
@@ -43,7 +53,8 @@ const CartPage = () => {
   const calculateTotal = () => {
     return cartItems.reduce((total, item) => {
       const qty = item.quantity || 1;
-      return total + parseFloat(item.price) * qty;
+      const price = item.price || 0;
+      return total + price * qty;
     }, 0);
   };
 
@@ -58,7 +69,7 @@ const CartPage = () => {
         borderRadius: '10px',
         boxShadow: 'rgba(149, 157, 165, 0.2) 0px 8px 24px'
       }}>
-        <h2>Cart {cartItems.length} item(s)</h2>
+        <h2>Cart ({cartItems.length} item{cartItems.length !== 1 ? 's' : ''})</h2>
         <hr className="divider" />
 
         {cartItems.length === 0 ? (
@@ -140,7 +151,7 @@ const CartPage = () => {
                       cursor: 'pointer'
                     }}
                   >−</button>
-                  <span>{item.quantity || 1}</span>
+                  <span>{item.quantity}</span>
                   <button
                     onClick={() => handleQuantityChange(index, 1)}
                     style={{
@@ -156,10 +167,11 @@ const CartPage = () => {
                   >+</button>
                 </div>
               </div>
-              <p>Unit Price</p>
-              <div style={{ display: 'flex', alignItems: 'center' }}>
+
+              <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+                <p>Unit Price</p>
                 <p style={{ fontSize: '18px', fontWeight: 'bold' }}>
-                  ₦{(parseFloat(item.price) * (item.quantity || 1)).toLocaleString()}
+                  ₦{(item.price * item.quantity).toLocaleString()}
                 </p>
               </div>
             </div>
@@ -208,8 +220,8 @@ const CartPage = () => {
           </div>
         )}
       </div>
-        <img style={{color: '#000'}} src={Divider} alt="" />
 
+      <img style={{ color: '#000' }} src={Divider} alt="divider" />
       <RecentlyViewed />
       <Footer />
     </>
@@ -217,3 +229,4 @@ const CartPage = () => {
 };
 
 export default CartPage;
+

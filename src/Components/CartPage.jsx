@@ -6,6 +6,7 @@ import RecentlyViewed from './RecentlyViewed';
 import { AiFillHeart, AiOutlineHeart } from 'react-icons/ai';
 import { FaTrashAlt } from 'react-icons/fa';
 import { Divider } from '../images';
+import { useNavigate } from 'react-router-dom';
 
 const CartPage = () => {
   const [cartItems, setCartItems] = useState(() => {
@@ -57,6 +58,8 @@ const CartPage = () => {
       return total + price * qty;
     }, 0);
   };
+
+  const navigate = useNavigate();
 
   return (
     <>
@@ -191,6 +194,7 @@ const CartPage = () => {
 
             <div style={{ display: 'flex', justifyContent: 'flex-end', gap: '1rem', marginTop: '1.5rem' }}>
               <button
+                onClick={() => navigate('/AllProducts')}
                 style={{
                   border: '1px solid #bd3a3a',
                   backgroundColor: '#fff',
@@ -204,6 +208,7 @@ const CartPage = () => {
                 Continue Shopping
               </button>
               <button
+                onClick={() => navigate('/checkout', { state: { cartItems } })}
                 style={{
                   backgroundColor: '#bd3a3a',
                   color: '#fff',
@@ -229,4 +234,3 @@ const CartPage = () => {
 };
 
 export default CartPage;
-

@@ -1,0 +1,15 @@
+@media (max-width: 768px) {
+    .collection-top-left {
+        width: 120% !important;
+    }
+    .fw-bold, .shop-learn-btn {
+        justify-content: center !important;
+    }
+    .byc-news-article-card-center, .byc-news-article-card-right  {
+        margin-top: 10%;
+    }
+    .yourself, .nav-arrows {
+        display: none;
+    }
+    
+}

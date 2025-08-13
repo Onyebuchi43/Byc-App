@@ -8,6 +8,7 @@ import Nav from './Nav';
 import BycNews from './BycNews';
 import Blog from './Blog';
 import { useNavigate } from 'react-router-dom';
+import '../home.css';
 
 const Home = () => {
 
@@ -67,7 +68,7 @@ const Home = () => {
   <div className="d-flex flex-column align-items-center justify-content-center bg-none text-center heading">
     
     <p className="fs-4 mb-4" style={{fontWeight: '450', fontSize: '80px'}}>Your body deserves comfort</p>
-    <span className=" fw-bold mb-5" style={{fontSize: '60px', width: '690px'}}>Get the best for <span id="changingText" style={{fontSize: '55px', fontWeight: '700', minWidthwidth: '2px'}}>yourself</span></span>
+    <span className=" fw-bold mb-5 yourself" style={{fontSize: '60px', width: '690px'}}>Get the best for <span id="changingText" style={{fontSize: '55px', fontWeight: '700', minWidthwidth: '2px'}}>yourself</span></span>
     <div className="shop-learn-btn">
       <button type="button" className="btn btn-dark me-2" style={{width: '250px', height: '60px', fontWeight: '700'}}>Shop Now</button>
       <button onClick={handleAbout} type="button" className="btn btn-outline-dark learn-more-btn" style={{width: '250px', height: '60px', border: '3px solid #000001', fontWeight: '700', marginLeft: '20px'}}>Learn More</button>
@@ -80,7 +81,7 @@ const Home = () => {
     <img src={SubImageRight} alt="" />
   </div>
 
-  <div className="new-arrival">
+  <div className="new-arrival" style={{}}>
     <div className="new-arrival-body">
       <div className="new-arrival-top text-center">
         <h3 style={{fontSize: '250%'}}>Checkout BYC New Arrivals</h3>
@@ -119,11 +120,11 @@ const Home = () => {
     </div>
   </div>
 
-  <div className="byc-collection">
+  <div className="byc-collection" style={{justifyContent: 'center', display: 'flex', flexWrap: 'wrap'}}>
     <div className="collection-body" style={{marginTop: '8%'}}>
-        <div className="collection-body-top d-flex">
-        <div className="collection-top-left me-2" style={{backgroundColor: '#F1F1F1', width: '45%', padding: '90px', height: '550px'}}>
-            <div className="collection-top-left-h">
+        <div className="collection-body-top" style={{display: 'flex', flexWrap: 'wrap'}}>
+        <div className="collection-top-left me-2" style={{backgroundColor: '#F1F1F1', width: '49.6%', padding: '90px', height: '550px'}}>
+            <div className="collection-top-left-h" >
             <h2 style={{ color: '#616161', fontWeight: '700'}}>BYC Collection 2021</h2>
                 <h1 style={{fontSize: '50px', fontWeight: '700'}}>BYC Collection</h1>
                 <p style={{fontWeight: '400', fontSize: '13px'}}>The best everyday option in a Super Saver range within a<br /> reasonable price. It is our responsibility to keep you<br />
@@ -136,22 +137,22 @@ const Home = () => {
 
         <div className="collection-top-right">
             <div className="collection-top-right-img">
-                <img src={CollectionImageRight} alt="" style={{width: '123%', height: '550px' }}/>
+                <img src={CollectionImageRight} alt="" style={{ height: '550px' }}/>
             </div>
         </div>
         </div>
 
-        <div className="collection-body-buttom d-flex mt-3">
+        <div className="collection-body-buttom  mt-3" style={{display: 'flex', flexWrap: 'wrap'}}>
         <div className="collection-buttom-left me-2">
             <div className="collection-buttom-left-img">
-                <img src={CollectionButtomLeft} alt="" style={{width: '119.2%', height: '550px' }}/>
+                <img src={CollectionButtomLeft} alt="" style={{ height: '550px' }}/>
             </div>
         </div>
 
 
         <div className="collection-buttom-right">
             <div className="collection-buttom-right-img">
-                <img src={CollectionButtomRight} alt="" style={{width: '142.5%', height: '550px', paddingLeft: '19.5%' }}/>
+                <img src={CollectionButtomRight} alt="" style={{ height: '550px',  }}/>
             </div>
         </div>
         </div>

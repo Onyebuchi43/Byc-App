@@ -4,6 +4,54 @@ import StarRating from './StarRating'
 import { BycMenBoxers } from '../images';
 
 const RecentlyViewed = () => {
+
+    const recentlyViewedProducts = [
+  {
+    id: 1,
+    title: 'MEN BOXERS',
+    code: 'BYC 1163',
+    description: "Fashionable Men's Underwear Boxer Cotton Underwear 3 In 1",
+    price: 1900,
+    image: BycMenBoxers,
+    rating: 4.05,
+  },
+  {
+    id: 2,
+    title: 'MEN BOXERS',
+    code: 'BYC 1163',
+    description: "Fashionable Men's Underwear Boxer Cotton Underwear 3 In 1",
+    price: 1900,
+    image: BycMenBoxers,
+    rating: 4.05,
+  },
+  {
+    id: 3,
+    title: 'MEN BOXERS',
+    code: 'BYC 1163',
+    description: "Fashionable Men's Underwear Boxer Cotton Underwear 3 In 1",
+    price: 1900,
+    image: BycMenBoxers,
+    rating: 4.05,
+  },
+  {
+    id: 4,
+    title: 'MEN BOXERS',
+    code: 'BYC 1163',
+    description: "Fashionable Men's Underwear Boxer Cotton Underwear 3 In 1",
+    price: 1900,
+    image: BycMenBoxers,
+    rating: 4.05,
+  },
+  {
+    id: 5,
+    title: 'MEN BOXERS',
+    code: 'BYC 1163',
+    description: "Fashionable Men's Underwear Boxer Cotton Underwear 3 In 1",
+    price: 1900,
+    image: BycMenBoxers,
+    rating: 4.5,
+  },
+];
   return (
     <>
      <div className="recently-viewed container" style={{boxShadow: 'rgba(149, 157, 165, 0.2) 0px 8px 24px', marginTop: '8%', borderTopRightRadius: '20px', borderTopLeftRadius: '20px', borderBottomRightRadius: '20px', borderBottomLeftRadius: '20px',width: '70%', paddingBottom: '2rem', width: '100%'}}>
@@ -69,7 +117,7 @@ const RecentlyViewed = () => {
                             <h4>₦1,900.00</h4>
                         </div>
                         <div className="rating">
-                            <StarRating rating={4.05}  color="#FBBF24" /> 
+                            <StarRating rating={4.05}  color="#FBBF24" />
                         </div>
                     </div>
 
@@ -83,7 +131,7 @@ const RecentlyViewed = () => {
                             <h4>₦1,900.00</h4>
                         </div>
                         <div className="rating">
-                            <StarRating rating={4.5} /> 
+                            <StarRating rating={4.5} />
                         </div>
                     </div>
                 </div>

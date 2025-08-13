@@ -7,7 +7,7 @@ import {SecuredPayImage} from '../images';
 
 const Checkout = () => {
   const location = useLocation();
-  const product = location.state?.product;
+  const cartItems = location.state?.cartItems || [];
   const navigate = useNavigate();
 
   const [formData, setFormData] = useState({
@@ -39,55 +39,48 @@ const Checkout = () => {
     alert(`Order placed using ${paymentMethod === 'bank' ? 'Direct Bank Transfer' : 'Online Payment'}`);
   };
 
-  if (!product) {
-    return (
-      <div style={{ padding: '2rem' }}>
-        <h2>No product data found.</h2>
-        <button onClick={() => navigate('/')}>Go Back</button>
-      </div>
-    );
-  }
+  if (cartItems.length === 0) {
+  return (
+    <div style={{ padding: '2rem' }}>
+      <h2>No cart items found.</h2>
+      <button onClick={() => navigate('/')}>Go Back</button>
+    </div>
+  );
+}
+
 
   return (
     <>
       <Nav />
       {/* Product Summary */}
       <div style={{ padding: '2rem' }}>
-        <h2>Order Summary 1 item(s)</h2>
-        <div style={{
-          display: 'flex',
-          gap: '1rem',
-          boxShadow: '0 2px 8px rgba(0,0,0,0.1)',
-          padding: '1rem',
-          borderRadius: '10px',
-        }}>
-          <img src={product.image} alt={product.title} style={{ width: '150px', borderRadius: '10px' }} />
-          <div style={{ flex: 1 }}>
-            <h3>{product.title}</h3>
-            <p style={{ fontWeight: 'bold' }}>{product.code}</p>
-            <p>{product.description}</p>
-            <h3 style={{ marginTop: '0.5rem' }}>{product.price}</h3>
-            <p>Quantity: 1</p>
-            <button style={{
-              marginTop: '1rem',
-              backgroundColor: '#d33',
-              color: '#fff',
-              padding: '0.5rem 1rem',
-              border: 'none',
-              borderRadius: '5px',
-              cursor: 'pointer'
-            }}>
-              Modify Cart
-            </button>
-          </div>
-          <div style={{ minWidth: '200px' }}>
-            <p>Subtotal: {product.price}</p>
-            <p>Delivery fee: ₦{deliveryFee.toFixed(2)}</p>
-            <hr />
-            <p style={{ fontWeight: 'bold' }}>Total: {product.price}</p>
-          </div>
-        </div>
+  <h2>Order Summary {cartItems.length} item{cartItems.length !== 1 ? 's' : ''}</h2>
+  {cartItems.map((item, index) => (
+    <div key={index} style={{
+      display: 'flex',
+      gap: '1rem',
+      boxShadow: '0 2px 8px rgba(0,0,0,0.1)',
+      padding: '1rem',
+      borderRadius: '10px',
+      marginBottom: '1rem',
+    }}>
+      <img src={item.image} alt={item.title} style={{ width: '150px', borderRadius: '10px' }} />
+      <div style={{ flex: 1 }}>
+        <h3>{item.title}</h3>
+        <p style={{ fontWeight: 'bold' }}>{item.code}</p>
+        <p>{item.description}</p>
+        <h3 style={{ marginTop: '0.5rem' }}>₦{(item.price * item.quantity).toLocaleString()}</h3>
+        <p>Quantity: {item.quantity}</p>
       </div>
+      <div style={{ minWidth: '200px' }}>
+        <p>Subtotal: ₦{(item.price * item.quantity).toLocaleString()}</p>
+        <p>Delivery fee: ₦0.00</p>
+        <hr />
+        <p style={{ fontWeight: 'bold' }}>Total: ₦{(item.price * item.quantity).toLocaleString()}</p>
+      </div>
+    </div>
+  ))}
+</div>
 
       {/* Checkout and Shipping Section */}
       <div style={{

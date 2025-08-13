@@ -255,6 +255,8 @@ const toggleWishlist = (product) => {
     marginBottom: '60px',
   };
 
+
+
   return (
     <>
       <Nav />

@@ -23,4 +23,3 @@ const AuthorSection = ({customStyles}) => {
 }
 
 export default AuthorSection
-

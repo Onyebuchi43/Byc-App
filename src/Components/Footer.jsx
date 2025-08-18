@@ -2,6 +2,7 @@ import React from 'react'
 import '../style.css';
 import {Paypal, Visa, Mastercard, NewsLetterArrow, Mail, Phone, Facebook, Instagram, X, Youtube, HR} from '../images';
 import CurrentYear from './CurrentYear';
+import '../footer.css';
 
 const Footer = () => {
   return (
@@ -54,7 +55,7 @@ const Footer = () => {
           <div className="signup-news-letter-body">
             <h3 style={{fontWeight: '600', fontSize: '18px'}}>Signup For The Latest News</h3>
             <input className='input-email' type="email" placeholder="Enter Email" style={{width: '75%', height: '40px', borderRadius: '2px solid  #FFFFFF', border: '1px solid #ccc', backgroundColor: '#212121', color: '#FFF00', opacity: '1', position: 'relative', zIndex: '0'}} />
-            <button style={{background: 'none', border: 'none', cursor: 'pointer', marginLeft: '-26px', marginTop: '5px', zIndex: '0', position: 'absolute'}}><img src={NewsLetterArrow} alt="" /></button>
+            <button className='NewsLetter' style={{background: 'none', border: 'none', cursor: 'pointer', marginLeft: '-26px', marginTop: '5px', zIndex: '0', position: 'absolute'}}><img src={NewsLetterArrow} alt="" /></button>
             <div className="official-email">
               <p style={{ fontWeight: '300', paddingTop: '32px'}}><img src={Mail} alt="" /> bycafrica@gmail.com </p>
             </div>

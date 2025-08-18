@@ -1,0 +1,5 @@
+@media (max-width: 768px) {
+        .byc-news-article-card-left, .byc-news-article-card-center, .NewsLetter {
+            margin: 0 auto !important;
+    }
+}

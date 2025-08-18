@@ -142,8 +142,8 @@ const Home = () => {
         </div>
         </div>
 
-        <div className="collection-body-buttom  mt-3" style={{display: 'flex', flexWrap: 'wrap'}}>
-        <div className="collection-buttom-left me-2">
+        <div className="collection-body-buttom  " style={{display: 'flex', flexWrap: 'wrap', marginTop: '1%'}}>
+        <div className="collection-buttom-left me-2" style={{marginRight: '1%'}}>
             <div className="collection-buttom-left-img">
                 <img src={CollectionButtomLeft} alt="" style={{ height: '550px' }}/>
             </div>

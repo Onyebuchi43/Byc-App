@@ -5,6 +5,7 @@ import {BlogImageLeft, BlogImageCenter, BlogImageRight, AuthorImage, ReadMoreArr
 import Blog from './Blog';
 import { useNavigate } from "react-router-dom";
 import ReadMoreBtn from './ReadMoreBtn';
+import '../bycnews.css'
 
 
 

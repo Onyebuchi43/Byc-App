@@ -11,5 +11,7 @@
     .yourself, .nav-arrows {
         display: none;
     }
-    
+    .shop-learn-btn, .new-arrival-left, .collection-body-buttom, .collection-buttom-left {
+        margin: 0 auto !important;
+    }
 }
